@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지와 데이터 업로드</title>
+    <style>
+        /* CSS 초기화 또는 Normalize CSS (필요시) */
+
+        body {
+            font-family: '맑은 고딕', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4285F4;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .image-details,
+        .exercise-details {
+            flex: 1;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .exercise-table th, .exercise-table td {
+            font-size: 14px;
+        }
+
+        .text-column {
+            width: 100%;
+        }
+
+        select {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        pre {
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>무슨 운동을 하실건가요?</h1>
+    </header>
+    <div class="container">
+        <div class="image-details">
+            <table>
+                <tr>
+                    <td>
+                        {% for food_data in class_frequency %}
+                            <p id="foodSelect">{{ food_data['class_name'] }}</p>
+                            <label for="otherFoodList">세부 객체</label>
+                            <select id="otherFoodList" onchange="updateCalories()">
+                                {% for dropdown_item in dropdownList %}
+                                    <option value="{{ dropdown_item }}">{{ dropdown_item }}</option>
+                                {% endfor %}
+                            </select>
+                            <p id="caloriesOutput">선택된 음식의 칼로리: </p>
+                            <img src="{{ url_for('static', filename='uploads/' + food_data['filename']) }}" alt="{{ food_data['class_name'] }}">
+                            <pre>탄수화물 {{ food_data['carbohydrate'] }}g   단백질 {{ food_data['protein'] }}g   지방 {{ food_data['province'] }}g
+나트륨 {{ food_data['natrium'] }}mg   당 {{ food_data['sugar'] }}g</pre>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="exercise-details">
+            <table class="exercise-table">
+                <tr>
+                    <td class="text-column">
+                        <table>
+                            <tr>
+                                <th>운동</th>
+                                <th>소모시간</th>
+                            </tr>
+                            {% for data in class_frequency %}
+                                <tr><td>걷기</td><td id="walkingTime"></td></tr>
+                                <tr><td>계단</td><td id="stairsTime"></td></tr>
+                                <tr><td>등산</td><td id="hikingTime"></td></tr>
+                                <tr><td>수영</td><td id="swimmingTime"></td></tr>
+                                <tr><td>요가</td><td id="yogaTime"></td></tr>
+                                <tr><td>복싱</td><td id="boxingTime"></td></tr>
+                                <tr><td>줄넘기</td><td id="jumpRopeTime"></td></tr>
+                                <tr><td>자전거</td><td id="bikingTime"></td></tr>
+                                <tr><td>달리기</td><td id="runningTime"></td></tr>
+                                <tr><td>윗몸일으키기</td><td id="sitUpTime"></td></tr>
+                                {% endfor %}
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    <script>
+        var dropdownList = JSON.parse('{{ dropdownList | tojson | safe }}');
+        var caloriesData = {
+        // [햄버거]
+        '빅맥': 583,
+        '상하이 스파이스': 441,
+        '맥스파이시': 501,
+        '베이컨 토마토': 545,
+        '1995': 537,
+        '불고기':  409,
+        '맥모닝': 325,
+        '더블쿼터파운드치즈버거': 761,
+        '치즈버거': 317,
+        '더블불고기버거': 648,
+        '슈비버거': 563,
+
+
+        //[감자칩]
+        '포카칩 오리지널': 377,
+        '프링글스 오리지널': 575.3,
+        '프링글스 사워어니언': 585,
+        '스윙칩 볶음고추장': 352,
+        '예감': 76,
+        '눈을감자': 287,
+        '허니버터칩': 345,
+        '수미칩': 443,
+        '오감자': 196,
+        '칩포테토': 350,
+        
+
+        //[감자튀김]
+        '롯데리아 감튀': 267,
+        '버거킹 감튀': 399,
+        '맥도날드 감튀':210 ,
+        '맘스터치 감튀': 313,
+
+        //[치즈스틱]
+        '노브랜드 치즈스틱': 282,
+        '오뚜기 치즈스틱': 290,
+        '롯데리아 치즈스틱':160,
+        '롯데리아 롱스틱':156,
+        '하림 치즈스틱':308,
+        '맘스터치 치즈스틱': 63,
+        '도미노 치즈스틱':477,
+        '맥도날드 치즈스틱':165,
+        
+        
+        //[라면]
+        '신라면': 500,
+        '진라면': 500,
+        '열라면': 460,
+        '너구리': 490,
+        '육개장라면': 515,
+        '김치라면': 510,
+        '사리곰탕': 475,
+        '무파마': 510,
+        '오징어짬뽕': 525,
+        '참깨라면': 505,
+        
+
+        //[피자]한 조각 기준 
+        '포테이토 피자':388,
+        '페퍼로니 피자':271,
+        '슈퍼슈프림':321,
+        '블랙타이거 슈림프':288,
+        '불고기피자':334,
+        '포테이토피자':322,
+        '블랙앵거스 스테이크':307,
+        '슈퍼 디럭스':307,
+        '직화 스테이크':304, 
+        '치즈케이크샌':380,
+        '포테이토 씬':253, 
+        '슈퍼디럭스 오리지널':307, 
+        '리얼바비큐':361, 
+
+
+        // [치킨]
+        'BBQ 황금올리브': 225,
+        'BBQ 황올순살':	311,
+        'BBQ 양념치킨': 267,
+        'BHC 뿌링클': 290,
+        'BHC 후라이드': 347,
+        'BHC 맛초킹': 264,
+        '교촌 오리지날': 346,
+        '교촌 허니콤보': 319,
+        '교촌 레드콤보': 303,
+        '굽네 오리지날': 190,
+        '굽네 고추바사삭': 233,
+        '굽네 볼케이노': 219,
+
+
+        //[도넛]
+        '글레이즈드':210, 
+        '스트로베리필드':223, 
+        '올리브 츄이스티':220, 
+        '초코글레이즈드':230, 
+        '카카오 허니딥 먼치킨 4조각(52g)':245, 
+        '바바리안필드':227,
+        '보스톤크림':245,
+        '스트로베리 먼치킨':33, 
+        '카카오하니딥':	224, 
+        '올드훼션드 먼치킨':60, 
+        '카푸치노츄이스티':	211, 
+        '바바리안 먼치킨 5개 (50g)':190, 
+        '소금 우유도넛':267, 
+        '초코칩스콘':270, 
+        '허니 후리터':322, 
+        '페이머스 글레이즈드':	210, 
+
+
+       
+
+}
+        var weight = JSON.parse('{{ weight | tojson | safe }}');
+
+
+        function updateCalories() {
+            var dropdown = document.getElementById("otherFoodList");
+            var selectedFood = dropdown.value;
+            var selectedCalories = caloriesData[selectedFood]; // 선택된 음식의 칼로리 값 가져오기
+            
+            console.log("선택된 칼로리 값:", selectedCalories); // 콘솔에 칼로리 값 출력
+
+            document.getElementById("caloriesOutput").innerText = "선택된 음식의 칼로리: " + selectedCalories + " kcal";
+            updateExerciseTime(selectedCalories); // 선택된 칼로리 값으로 운동시간 업데이트
+        }
+
+        function updateExerciseTime(calories) {
+            var walkingTimeInMinutes = calories / (0.067 * weight);
+            var stairsTimeInMinutes = calories / (0.125 * weight);
+            var hikingTimeInMinutes = calories / (0.14 * weight);
+            var swimmingTimeInMinutes = calories / (0.158 * weight);
+            var yogaTimeInMinutes = calories / (0.044 * weight);
+            var boxingTimeInMinutes = calories / (0.175 * weight);
+            var jumpRopeTimeInMinutes = calories / (0.175 * weight);
+            var bikingTimeInMinutes = calories / (0.14 * weight);
+            var runningTimeInMinutes = calories / (0.123 * weight);
+            var sitUpTimeInMinutes = calories / (0.14 * weight);
+            
+            displayTime("walkingTime",walkingTimeInMinutes);
+            displayTime("stairsTime", stairsTimeInMinutes);
+            displayTime("hikingTime", hikingTimeInMinutes);
+            displayTime("swimmingTime", swimmingTimeInMinutes);
+            displayTime("yogaTime", yogaTimeInMinutes);
+            displayTime("boxingTime", boxingTimeInMinutes);
+            displayTime("jumpRopeTime", jumpRopeTimeInMinutes);
+            displayTime("bikingTime", bikingTimeInMinutes);
+            displayTime("runningTime", runningTimeInMinutes);
+            displayTime("sitUpTime", sitUpTimeInMinutes);               
+            }
+            function displayTime(elementId, timeInMinutes) {
+                var hours = Math.floor(timeInMinutes / 60);
+                var minutes = Math.floor(timeInMinutes % 60);
+                var timeElement = document.getElementById(elementId);
+                timeElement.textContent = hours + "시간 " + minutes + "분 (" + Math.floor(timeInMinutes) + "분)";
+            }
+            updateCalories();
+    </script>
+</body>
+</html>

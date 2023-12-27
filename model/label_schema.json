@@ -1,0 +1,380 @@
+{
+    "label_tree": {
+        "type": "tree",
+        "directed": true,
+        "nodes": [],
+        "edges": []
+    },
+    "label_groups": [
+        {
+            "_id": "656d72c03ecb47f00f687a1b",
+            "name": "Classification labels___\ud584\ubc84\uac70",
+            "label_ids": [
+                "656d72623ecb47f00f6879e4"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a1c",
+            "name": "Classification labels___\uac10\uc790\ud280\uae40",
+            "label_ids": [
+                "656d72623ecb47f00f6879e5"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a1d",
+            "name": "Classification labels___\uac10\uc790\uce69",
+            "label_ids": [
+                "656d72623ecb47f00f6879e6"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a1e",
+            "name": "Classification labels___\ub77c\uba74",
+            "label_ids": [
+                "656d72623ecb47f00f6879e7"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a1f",
+            "name": "Classification labels___\ud0c0\ucf54",
+            "label_ids": [
+                "656d72623ecb47f00f6879e8"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a20",
+            "name": "Classification labels___\uce58\uc988\uc2a4\ud2f1",
+            "label_ids": [
+                "656d72623ecb47f00f6879e9"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a21",
+            "name": "Classification labels___\ub9c8\uce74\ub871",
+            "label_ids": [
+                "656d72623ecb47f00f6879ea"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a22",
+            "name": "Classification labels___\ub3c4\ub11b",
+            "label_ids": [
+                "656d72623ecb47f00f6879eb"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a23",
+            "name": "Classification labels___\ud53c\uc790",
+            "label_ids": [
+                "656d72623ecb47f00f6879ec"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a24",
+            "name": "Classification labels___\uce58\ud0a8",
+            "label_ids": [
+                "656d72623ecb47f00f6879ed"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a25",
+            "name": "Classification labels___\uc544\uc774\uc2a4\ud06c\ub9bc",
+            "label_ids": [
+                "656d72623ecb47f00f6879ee"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a26",
+            "name": "Classification labels___\ucf5c\ub77c",
+            "label_ids": [
+                "656d72623ecb47f00f6879ef"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a27",
+            "name": "Classification labels___\uc870\uac01\ucf00\uc775",
+            "label_ids": [
+                "656d72623ecb47f00f6879f0"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a28",
+            "name": "Classification labels___\uce58\uc988\ubcfc",
+            "label_ids": [
+                "656d72623ecb47f00f6879f1"
+            ],
+            "relation_type": "EXCLUSIVE"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a29",
+            "name": "No Class",
+            "label_ids": [
+                "656d72623ecb47f00f687a02"
+            ],
+            "relation_type": "EMPTY_LABEL"
+        },
+        {
+            "_id": "656d72c03ecb47f00f687a2a",
+            "name": "Classification labels___\ud0d5\ud6c4\ub8e8",
+            "label_ids": [
+                "656d72b63ecb47f00f687a07"
+            ],
+            "relation_type": "EXCLUSIVE"
+        }
+    ],
+    "all_labels": {
+        "656d72623ecb47f00f6879e4": {
+            "_id": "656d72623ecb47f00f6879e4",
+            "name": "\ud584\ubc84\uac70",
+            "color": {
+                "red": 204,
+                "green": 148,
+                "blue": 218,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879e5": {
+            "_id": "656d72623ecb47f00f6879e5",
+            "name": "\uac10\uc790\ud280\uae40",
+            "color": {
+                "red": 38,
+                "green": 81,
+                "blue": 142,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879e6": {
+            "_id": "656d72623ecb47f00f6879e6",
+            "name": "\uac10\uc790\uce69",
+            "color": {
+                "red": 157,
+                "green": 59,
+                "blue": 26,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879e7": {
+            "_id": "656d72623ecb47f00f6879e7",
+            "name": "\ub77c\uba74",
+            "color": {
+                "red": 247,
+                "green": 218,
+                "blue": 179,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879e8": {
+            "_id": "656d72623ecb47f00f6879e8",
+            "name": "\ud0c0\ucf54",
+            "color": {
+                "red": 37,
+                "green": 161,
+                "blue": 142,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879e9": {
+            "_id": "656d72623ecb47f00f6879e9",
+            "name": "\uce58\uc988\uc2a4\ud2f1",
+            "color": {
+                "red": 237,
+                "green": 178,
+                "blue": 0,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879ea": {
+            "_id": "656d72623ecb47f00f6879ea",
+            "name": "\ub9c8\uce74\ub871",
+            "color": {
+                "red": 7,
+                "green": 105,
+                "blue": 132,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879eb": {
+            "_id": "656d72623ecb47f00f6879eb",
+            "name": "\ub3c4\ub11b",
+            "color": {
+                "red": 128,
+                "green": 233,
+                "blue": 175,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879ec": {
+            "_id": "656d72623ecb47f00f6879ec",
+            "name": "\ud53c\uc790",
+            "color": {
+                "red": 241,
+                "green": 91,
+                "blue": 133,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879ed": {
+            "_id": "656d72623ecb47f00f6879ed",
+            "name": "\uce58\ud0a8",
+            "color": {
+                "red": 233,
+                "green": 97,
+                "blue": 21,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879ee": {
+            "_id": "656d72623ecb47f00f6879ee",
+            "name": "\uc544\uc774\uc2a4\ud06c\ub9bc",
+            "color": {
+                "red": 129,
+                "green": 64,
+                "blue": 123,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879ef": {
+            "_id": "656d72623ecb47f00f6879ef",
+            "name": "\ucf5c\ub77c",
+            "color": {
+                "red": 91,
+                "green": 105,
+                "blue": 255,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879f0": {
+            "_id": "656d72623ecb47f00f6879f0",
+            "name": "\uc870\uac01\ucf00\uc775",
+            "color": {
+                "red": 84,
+                "green": 143,
+                "blue": 173,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f6879f1": {
+            "_id": "656d72623ecb47f00f6879f1",
+            "name": "\uce58\uc988\ubcfc",
+            "color": {
+                "red": 112,
+                "green": 133,
+                "blue": 65,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.662000",
+            "is_empty": false,
+            "is_anomalous": false
+        },
+        "656d72623ecb47f00f687a02": {
+            "_id": "656d72623ecb47f00f687a02",
+            "name": "No Class",
+            "color": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:32:02.665000",
+            "is_empty": true,
+            "is_anomalous": false
+        },
+        "656d72b63ecb47f00f687a07": {
+            "_id": "656d72b63ecb47f00f687a07",
+            "name": "\ud0d5\ud6c4\ub8e8",
+            "color": {
+                "red": 151,
+                "green": 214,
+                "blue": 13,
+                "alpha": 255
+            },
+            "hotkey": "",
+            "domain": "CLASSIFICATION",
+            "creation_date": "2023-12-04T06:33:26.231000",
+            "is_empty": false,
+            "is_anomalous": false
+        }
+    }
+}

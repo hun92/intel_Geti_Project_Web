@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .upload-section,
+        .weight-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        input[type="number"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 250px;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4285F4;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #357AE8;
+        }
+
+        /* 수정한 부분 */
+        .input-info {
+            font-size: 10px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Input</h1>
+    <div class="container">
+        <div class="upload-section">
+            <h2>파일을 넣어주세요.</h2>
+            <form action="/fileUpload" method="POST" enctype="multipart/form-data">
+                <label for="file">파일</label>
+                <input type="file" id="file" name="file">
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+
+        <div class="weight-section">
+            <h2>체중을 입력해주세요.</h2>
+            <form action="/input" method="POST">
+                <label for="user_weight">체중</label>
+                <input type="number" id="user_weight" name="user_weight" placeholder="체중을 입력하세요">
+                <label class="input-info">※미입력시 75kg의 기준의 수치가 출력 됩니다.</label>
+                <input type="submit" value="확인 하러 가기">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
